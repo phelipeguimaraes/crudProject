@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.crudproject.controller.MainController">
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Cadastro de Produto"/>
+            <TextField fx:id="txtCodigo" promptText="Código"/>
+            <TextField fx:id="txtNome" promptText="Nome"/>
+            <TextField fx:id="txtDescricao" promptText="Descrição"/>
+            <DatePicker fx:id="dpDataFabricacao"/>
+            <DatePicker fx:id="dpDataValidade"/>
+            <TextField fx:id="txtQuantidade" promptText="Quantidade" />
+            <TextField fx:id="txtPrecoCompra" promptText="Preço de Compra"/>
+            <TextField fx:id="txtPrecoVenda" promptText="Preço de Venda"/>
+            <TextField fx:id="txtEstoque" promptText="Quantidade em Estoque"/>
+            <Button text="Vencimento em 60 dias" onAction="#filtrarVencimento" />
+            <Button text="Estoque Baixo" onAction="#filtrarEstoqueBaixo" />
+            <Button text="Lucro Médio por Categoria" onAction="#calcularLucroMedio" />
+            <Button text="Agrupar por Setor" onAction="#agruparPorSetor" />
+
+            <ComboBox fx:id="cbCategoria"/>
+            <HBox spacing="10">
+                <Button text="Cadastrar" onAction="#cadastrarProduto"/>
+                <Button text="Excluir" onAction="#excluirProduto"/>
+                <Button text="Consultar" onAction="#consultarProduto"/>
+                <Button text="Listar Todos" onAction="#listarProdutos"/>
+            </HBox>
+            <TextArea fx:id="txtAreaResultado" prefHeight="200"/>
+        </VBox>
+    </center>
+</BorderPane>
